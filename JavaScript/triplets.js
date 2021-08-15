@@ -22,7 +22,6 @@ function test(sum, array, expected) {
     console.log('IN', sum, '->', array);
     const label = 'Total time';
     console.time(label);
-    setTimeout(() => process.exit(1), 10000);
     const result = triplets(sum, array);
     console.timeEnd(label);
     console.log('\nOUT', result);
