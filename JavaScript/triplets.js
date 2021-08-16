@@ -4,9 +4,11 @@ const assert = require('assert');
 function triplets(t, d) {
     let attempts = 0;
     let sizeArray = d.length;
-    // d.sort((a, b) => a - b);
+    d.sort((a, b) => a - b);
     for (let i = 0; i < sizeArray - 2; i++) {
+        if (d[i] > t) continue;
         for (let j = i + 1; j < sizeArray - 1; j++) {
+            if (d[i] + d[j] > t) continue;
             for (let k = j + 1; k < sizeArray; k++) {
                 // console.log(`(${d[i]}, ${d[j]}, ${d[k]})`);
                 if (d[i] < d[j] < d[k] && d[i] + d[j] + d[k] <= t)
